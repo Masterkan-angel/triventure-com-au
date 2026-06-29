@@ -6,6 +6,7 @@
   --muted: #94a3b8;
   --gold: #facc15;
   --blue: #38bdf8;
+  --green: #22c55e;
 }
 
 * {
@@ -45,7 +46,9 @@ main {
   padding: 56px 0 80px;
 }
 
-.hero {
+.hero,
+.feature,
+.contact {
   padding: 64px;
   border-radius: 32px;
   background: linear-gradient(135deg, rgba(250, 204, 21, 0.14), rgba(56, 189, 248, 0.12));
@@ -59,11 +62,46 @@ main {
   line-height: 1.05;
 }
 
-.hero p {
-  max-width: 760px;
+.hero p,
+.feature p,
+.contact p {
+  max-width: 820px;
   color: var(--muted);
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--gold) !important;
+  font-size: 14px !important;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.buttons a,
+.feature a {
+  display: inline-flex;
+  padding: 13px 20px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #111827;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.buttons a:nth-child(2) {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .cards {
@@ -73,23 +111,74 @@ main {
   gap: 22px;
 }
 
-article {
+article,
+.video-grid div {
   padding: 28px;
   border-radius: 24px;
   background: rgba(15, 23, 42, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-article h3 {
+article h3,
+.feature h2,
+.contact h2 {
   margin: 0 0 12px;
   color: var(--gold);
-  font-size: 24px;
+  font-size: 28px;
 }
 
 article p {
   margin: 0;
   color: var(--muted);
   line-height: 1.75;
+}
+
+.feature,
+.contact {
+  margin-top: 34px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.feature.light {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(56, 189, 248, 0.12));
+}
+
+.tags,
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.tags span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(250, 204, 21, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  color: #fde68a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.video-grid div {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 14px !important;
+}
+
+.contact strong {
+  color: var(--gold);
+  font-size: 20px;
 }
 
 footer {
@@ -105,11 +194,14 @@ footer {
     align-items: flex-start;
   }
 
-  .hero {
+  .hero,
+  .feature,
+  .contact {
     padding: 36px 24px;
   }
 
-  .cards {
+  .cards,
+  .video-grid {
     grid-template-columns: 1fr;
   }
 }
