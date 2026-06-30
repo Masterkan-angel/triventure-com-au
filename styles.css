@@ -31,13 +31,21 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .header p {
   margin: 0;
   color: var(--gold);
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.header p span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 main {
@@ -57,18 +65,35 @@ main {
 }
 
 .hero h2 {
-  margin: 0 0 18px;
-  font-size: clamp(40px, 7vw, 76px);
-  line-height: 1.05;
+  margin: 0 0 16px;
+  font-size: clamp(44px, 7.5vw, 82px);
+  line-height: 1.02;
 }
 
 .hero p,
 .feature p,
 .contact p {
-  max-width: 820px;
+  max-width: 840px;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.85;
+}
+
+.zh,
+.zh-line {
+  display: block;
+  color: #a8b3c7;
+  font-size: 0.82em;
+  line-height: 1.65;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.hero .zh-line {
+  margin: 0 0 20px;
+  color: #fde68a;
+  font-size: clamp(21px, 3vw, 32px);
+  font-weight: 700;
 }
 
 .eyebrow {
@@ -124,7 +149,8 @@ article h3,
 .contact h2 {
   margin: 0 0 12px;
   color: var(--gold);
-  font-size: 28px;
+  font-size: 30px;
+  line-height: 1.15;
 }
 
 article p {
@@ -216,7 +242,7 @@ article p {
 .tool-grid h3,
 .video-cards h3,
 .steps h3 {
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .tool-grid p,
@@ -280,6 +306,10 @@ footer {
   .header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .header p {
+    text-align: left;
   }
 
   .hero,
