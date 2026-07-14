@@ -1,0 +1,166 @@
+@page {
+  size: A4;
+  margin: 16mm 14mm 18mm;
+}
+
+.print-brand,
+.print-footer {
+  display: none;
+}
+
+html,
+body {
+  background: #fff !important;
+  color: #111827 !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.canvas-page .header,
+.canvas-actions,
+.privacy-note,
+.canvas-page footer {
+  display: none !important;
+}
+
+.canvas-main {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 8mm !important;
+}
+
+.canvas-main::before {
+  content: "Triventure Australia   ·   Digital Asset Starter Canvas / 数字资产启动画布";
+  display: block;
+  margin: 0 0 9mm;
+  padding: 0 0 4mm;
+  border-bottom: 2px solid #0f172a;
+  color: #0f172a;
+  font-size: 11pt;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.canvas-page::after {
+  content: "Triventure Australia · Create once. Improve forever.";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -11mm;
+  padding-top: 3mm;
+  border-top: 1px solid #94a3b8;
+  color: #64748b;
+  font-size: 8pt;
+  text-align: center;
+}
+
+.canvas-intro {
+  break-inside: avoid-page;
+  margin: 0 0 7mm !important;
+  padding: 9mm 10mm !important;
+  border: 2px solid #0f172a !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+.canvas-intro .eyebrow {
+  color: #334155 !important;
+  font-size: 8.5pt !important;
+  letter-spacing: .12em !important;
+}
+
+.canvas-intro h1 {
+  margin-bottom: 4mm !important;
+  color: #0f172a !important;
+  font-size: 25pt !important;
+  line-height: 1.08 !important;
+}
+
+.canvas-intro > p:not(.eyebrow),
+.progress-label {
+  color: #334155 !important;
+}
+
+.canvas-intro > p:not(.eyebrow) {
+  font-size: 10pt !important;
+  line-height: 1.6 !important;
+}
+
+.progress-wrap {
+  margin-top: 6mm !important;
+}
+
+.progress-track {
+  height: 8px !important;
+  border: 1px solid #94a3b8 !important;
+  background: #fff !important;
+}
+
+.progress-track div {
+  background: #334155 !important;
+}
+
+.progress-label strong {
+  color: #0f172a !important;
+}
+
+.canvas-form {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
+.canvas-card {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+  display: grid !important;
+  grid-template-columns: 16mm 1fr !important;
+  gap: 6mm !important;
+  margin: 0 0 6mm !important;
+  padding: 7mm !important;
+  border: 1.2px solid #94a3b8 !important;
+  border-radius: 9px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.section-number {
+  width: 13mm !important;
+  height: 13mm !important;
+  border: 2px solid #0f172a !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  color: #0f172a !important;
+  font-size: 10pt !important;
+}
+
+.canvas-card-content h2 {
+  margin: 1mm 0 4mm !important;
+  color: #0f172a !important;
+  font-size: 17pt !important;
+  line-height: 1.2 !important;
+}
+
+.canvas-card label {
+  margin: 4mm 0 2mm !important;
+  color: #1e293b !important;
+  font-size: 9pt !important;
+}
+
+.canvas-card input,
+.canvas-card textarea,
+.canvas-card select {
+  padding: 3mm !important;
+  border: 1px solid #64748b !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+  font-size: 9.5pt !important;
+}
+
+.canvas-card textarea {
+  min-height: 26mm !important;
+  resize: none !important;
+}
