@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Asset Starter Canvas | Triventure Australia</title>
+  <meta name="description" content="A free bilingual workflow tool to define, record and plan your first digital asset." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="canvas-page">
+  <header class="header canvas-header">
+    <a class="brand" href="index.html" aria-label="Back to Triventure Australia">
+      <strong>Triventure Australia</strong>
+      <span>Digital Asset Starter Canvas</span>
+    </a>
+    <div class="canvas-header-actions">
+      <button type="button" class="small-button" id="languageToggle">中文</button>
+      <a class="header-cta" href="index.html">Back to Website</a>
+    </div>
+  </header>
+
+  <main class="canvas-main">
+    <section class="canvas-intro">
+      <p class="eyebrow" data-i18n="eyebrow">Free Bilingual Workflow Tool</p>
+      <h1 data-i18n="title">Digital Asset Starter Canvas</h1>
+      <p data-i18n="intro">Define one knowledge core and turn it into a realistic first asset. Your entries stay in this browser unless you choose to export them.</p>
+      <div class="progress-wrap" aria-label="Completion progress">
+        <div class="progress-label"><span data-i18n="progress">Canvas completion</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+    </section>
+
+    <form id="assetCanvas" class="canvas-form">
+      <section class="canvas-card">
+        <div class="section-number">01</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section1">Define the Knowledge Core</h2>
+          <label for="projectName" data-i18n="projectName">Project or working title</label>
+          <input id="projectName" name="projectName" type="text" data-placeholder="projectNamePh" placeholder="Example: China Consumer Insight Guide" />
+          <label for="knowledgeCore" data-i18n="knowledgeCore">What knowledge, experience, research or creative work do you possess?</label>
+          <textarea id="knowledgeCore" name="knowledgeCore" rows="5" data-placeholder="knowledgeCorePh" placeholder="Describe the useful knowledge at the centre of this project."></textarea>
+        </div>
+      </section>
+
+      <section class="canvas-card">
+        <div class="section-number">02</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section2">Identify the User and Value</h2>
+          <label for="audience" data-i18n="audience">Who needs this knowledge?</label>
+          <textarea id="audience" name="audience" rows="3" data-placeholder="audiencePh" placeholder="Describe the specific person, organisation or community."></textarea>
+          <label for="problem" data-i18n="problem">What problem will the asset help them solve?</label>
+          <textarea id="problem" name="problem" rows="3" data-placeholder="problemPh" placeholder="State the practical problem, decision or task."></textarea>
+        </div>
+      </section>
+
+      <section class="canvas-card">
+        <div class="section-number">03</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section3">Create the First Useful Asset</h2>
+          <label for="firstAsset" data-i18n="firstAsset">What is the smallest useful version you can create?</label>
+          <textarea id="firstAsset" name="firstAsset" rows="4" data-placeholder="firstAssetPh" placeholder="Example: a 12-page guide with a checklist and one worksheet."></textarea>
+          <label for="assetFormat" data-i18n="assetFormat">Primary format</label>
+          <select id="assetFormat" name="assetFormat">
+            <option value="" data-i18n="choose">Choose one</option>
+            <option value="guide" data-i18n="formatGuide">Guide or ebook</option>
+            <option value="worksheet" data-i18n="formatWorksheet">Worksheet or template</option>
+            <option value="course" data-i18n="formatCourse">Course or learning resource</option>
+            <option value="audio" data-i18n="formatAudio">Audio or podcast</option>
+            <option value="video" data-i18n="formatVideo">Video or media package</option>
+            <option value="research" data-i18n="formatResearch">Research report or database</option>
+            <option value="workflow" data-i18n="formatWorkflow">AI workflow or operating system</option>
+            <option value="other" data-i18n="formatOther">Other</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="canvas-card">
+        <div class="section-number">04</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section4">Plan Derivative Assets</h2>
+          <label for="derivativeAssets" data-i18n="derivativeAssets">What other assets could grow from the same knowledge core?</label>
+          <textarea id="derivativeAssets" name="derivativeAssets" rows="4" data-placeholder="derivativeAssetsPh" placeholder="Example: article series, webinar, audio edition, consulting service, translated version."></textarea>
+        </div>
+      </section>
+
+      <section class="canvas-card">
+        <div class="section-number">05</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section5">Set Access and Protection</h2>
+          <label for="accessModel" data-i18n="accessModel">How should the first asset be accessed?</label>
+          <select id="accessModel" name="accessModel">
+            <option value="" data-i18n="choose">Choose one</option>
+            <option value="public" data-i18n="accessPublic">Public - freely available</option>
+            <option value="preview" data-i18n="accessPreview">Preview - partial access</option>
+            <option value="paid" data-i18n="accessPaid">Paid or registered access</option>
+            <option value="private" data-i18n="accessPrivate">Private - internal use only</option>
+            <option value="mixed" data-i18n="accessMixed">Mixed access model</option>
+          </select>
+          <label for="privateMaterial" data-i18n="privateMaterial">What must remain private or protected?</label>
+          <textarea id="privateMaterial" name="privateMaterial" rows="3" data-placeholder="privateMaterialPh" placeholder="Source files, client data, contracts, unpublished plans, proprietary methods or other protected material."></textarea>
+        </div>
+      </section>
+
+      <section class="canvas-card">
+        <div class="section-number">06</div>
+        <div class="canvas-card-content">
+          <h2 data-i18n="section6">Record the Next Action</h2>
+          <label for="status" data-i18n="status">Current status</label>
+          <select id="status" name="status">
+            <option value="idea" data-i18n="statusIdea">Idea</option>
+            <option value="planning" data-i18n="statusPlanning">Planning</option>
+            <option value="draft" data-i18n="statusDraft">Draft in progress</option>
+            <option value="prototype" data-i18n="statusPrototype">Prototype</option>
+            <option value="beta" data-i18n="statusBeta">Beta test</option>
+            <option value="published" data-i18n="statusPublished">Published</option>
+          </select>
+          <label for="nextAction" data-i18n="nextAction">What is the next concrete action?</label>
+          <textarea id="nextAction" name="nextAction" rows="3" data-placeholder="nextActionPh" placeholder="Write one action that can be completed, not a vague long-term ambition."></textarea>
+          <label for="targetDate" data-i18n="targetDate">Target date</label>
+          <input id="targetDate" name="targetDate" type="date" />
+        </div>
+      </section>
+    </form>
+
+    <section class="canvas-actions" aria-label="Canvas actions">
+      <button type="button" id="saveButton" data-i18n="save">Save in This Browser</button>
+      <button type="button" id="downloadButton" class="secondary" data-i18n="download">Download Record</button>
+      <button type="button" id="printButton" class="secondary" data-i18n="print">Print / Save PDF</button>
+      <button type="button" id="clearButton" class="danger" data-i18n="clear">Clear Canvas</button>
+      <p id="saveMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="privacy-note">
+      <strong data-i18n="privacyTitle">Privacy by design</strong>
+      <p data-i18n="privacy">This V1 tool has no account or server database. Information is stored only in your current browser when you press Save. Download a copy if the record matters to you.</p>
+    </section>
+  </main>
+
+  <footer><p>© 2026 Triventure Australia. Create once. Improve forever.</p></footer>
+
+  <script>
+    const translations = {
+      en: {
+        eyebrow: "Free Bilingual Workflow Tool",
+        title: "Digital Asset Starter Canvas",
+        intro: "Define one knowledge core and turn it into a realistic first asset. Your entries stay in this browser unless you choose to export them.",
+        progress: "Canvas completion",
+        section1: "Define the Knowledge Core",
+        projectName: "Project or working title",
+        projectNamePh: "Example: China Consumer Insight Guide",
+        knowledgeCore: "What knowledge, experience, research or creative work do you possess?",
+        knowledgeCorePh: "Describe the useful knowledge at the centre of this project.",
+        section2: "Identify the User and Value",
+        audience: "Who needs this knowledge?",
+        audiencePh: "Describe the specific person, organisation or community.",
+        problem: "What problem will the asset help them solve?",
+        problemPh: "State the practical problem, decision or task.",
+        section3: "Create the First Useful Asset",
+        firstAsset: "What is the smallest useful version you can create?",
+        firstAssetPh: "Example: a 12-page guide with a checklist and one worksheet.",
+        assetFormat: "Primary format",
+        choose: "Choose one",
+        formatGuide: "Guide or ebook",
+        formatWorksheet: "Worksheet or template",
+        formatCourse: "Course or learning resource",
+        formatAudio: "Audio or podcast",
+        formatVideo: "Video or media package",
+        formatResearch: "Research report or database",
+        formatWorkflow: "AI workflow or operating system",
+        formatOther: "Other",
+        section4: "Plan Derivative Assets",
+        derivativeAssets: "What other assets could grow from the same knowledge core?",
+        derivativeAssetsPh: "Example: article series, webinar, audio edition, consulting service, translated version.",
+        section5: "Set Access and Protection",
+        accessModel: "How should the first asset be accessed?",
+        accessPublic: "Public - freely available",
+        accessPreview: "Preview - partial access",
+        accessPaid: "Paid or registered access",
+        accessPrivate: "Private - internal use only",
+        accessMixed: "Mixed access model",
+        privateMaterial: "What must remain private or protected?",
+        privateMaterialPh: "Source files, client data, contracts, unpublished plans, proprietary methods or other protected material.",
+        section6: "Record the Next Action",
+        status: "Current status",
+        statusIdea: "Idea",
+        statusPlanning: "Planning",
+        statusDraft: "Draft in progress",
+        statusPrototype: "Prototype",
+        statusBeta: "Beta test",
+        statusPublished: "Published",
+        nextAction: "What is the next concrete action?",
+        nextActionPh: "Write one action that can be completed, not a vague long-term ambition.",
+        targetDate: "Target date",
+        save: "Save in This Browser",
+        download: "Download Record",
+        print: "Print / Save PDF",
+        clear: "Clear Canvas",
+        privacyTitle: "Privacy by design",
+        privacy: "This V1 tool has no account or server database. Information is stored only in your current browser when you press Save. Download a copy if the record matters to you.",
+        saved: "Saved in this browser.",
+        downloaded: "Record downloaded.",
+        cleared: "Canvas cleared.",
+        confirmClear: "Clear all entries in this canvas?"
+      },
+      zh: {
+        eyebrow: "免费双语工作流工具",
+        title: "数字资产启动画布",
+        intro: "确定一个知识核心，并把它转化为现实可行的第一项数字资产。除非主动导出，你填写的内容只保存在当前浏览器中。",
+        progress: "画布完成度",
+        section1: "确定知识核心",
+        projectName: "项目名称或暂定名称",
+        projectNamePh: "例如：澳大利亚企业中国消费者入门指南",
+        knowledgeCore: "你拥有哪些知识、经验、研究成果或原创内容？",
+        knowledgeCorePh: "描述这个项目最核心、最有用的知识。",
+        section2: "确定用户和价值",
+        audience: "谁需要这些知识？",
+        audiencePh: "描述具体的个人、机构或社群。",
+        problem: "这项资产可以帮助他们解决什么问题？",
+        problemPh: "写出一个实际问题、决策或任务。",
+        section3: "制作第一项有用资产",
+        firstAsset: "你可以制作的最小有用版本是什么？",
+        firstAssetPh: "例如：一份12页指南，附一张检查表和一张工作表。",
+        assetFormat: "主要形式",
+        choose: "请选择",
+        formatGuide: "指南或电子书",
+        formatWorksheet: "工作表或模板",
+        formatCourse: "课程或学习资源",
+        formatAudio: "音频或播客",
+        formatVideo: "视频或媒体素材包",
+        formatResearch: "研究报告或数据库",
+        formatWorkflow: "AI工作流或操作系统",
+        formatOther: "其他",
+        section4: "规划衍生资产",
+        derivativeAssets: "同一个知识核心还可以发展出哪些资产？",
+        derivativeAssetsPh: "例如：系列文章、线上讲座、有声版、咨询服务、翻译版本。",
+        section5: "设置公开程度和保护范围",
+        accessModel: "第一项资产采用什么访问方式？",
+        accessPublic: "公开——免费提供",
+        accessPreview: "预览——只开放部分内容",
+        accessPaid: "付费或注册后获取",
+        accessPrivate: "私有——仅供内部使用",
+        accessMixed: "混合访问模式",
+        privateMaterial: "哪些内容必须保持私密或受到保护？",
+        privateMaterialPh: "源文件、客户资料、合同、未公开计划、专有方法或其他受保护内容。",
+        section6: "记录下一步行动",
+        status: "当前状态",
+        statusIdea: "想法",
+        statusPlanning: "规划中",
+        statusDraft: "正在制作草稿",
+        statusPrototype: "原型",
+        statusBeta: "测试版",
+        statusPublished: "已发布",
+        nextAction: "下一项具体行动是什么？",
+        nextActionPh: "写下一项能够真正完成的行动，不要只写模糊的长期愿望。",
+        targetDate: "目标日期",
+        save: "保存在当前浏览器",
+        download: "下载资产记录",
+        print: "打印／另存为PDF",
+        clear: "清空画布",
+        privacyTitle: "从设计上保护隐私",
+        privacy: "这个V1工具没有用户账户和服务器数据库。只有按下保存按钮后，信息才会保存在当前浏览器。重要记录请另行下载备份。",
+        saved: "已经保存在当前浏览器。",
+        downloaded: "资产记录已下载。",
+        cleared: "画布已清空。",
+        confirmClear: "确定清空画布中的全部内容吗？"
+      }
+    };
+
+    const storageKey = "triventure-digital-asset-starter-canvas-v1";
+    const form = document.getElementById("assetCanvas");
+    const fields = Array.from(form.querySelectorAll("input, textarea, select"));
+    const requiredForProgress = ["projectName", "knowledgeCore", "audience", "problem", "firstAsset", "assetFormat", "accessModel", "nextAction"];
+    let language = new URLSearchParams(window.location.search).get("lang") === "zh" ? "zh" : "en";
+
+    function applyLanguage() {
+      document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (translations[language][key]) element.textContent = translations[language][key];
+      });
+      document.querySelectorAll("[data-placeholder]").forEach((element) => {
+        const key = element.dataset.placeholder;
+        if (translations[language][key]) element.placeholder = translations[language][key];
+      });
+      document.getElementById("languageToggle").textContent = language === "en" ? "中文" : "English";
+      document.title = language === "en" ? "Digital Asset Starter Canvas | Triventure Australia" : "数字资产启动画布 | Triventure Australia";
+    }
+
+    function getData() {
+      const data = { language, savedAt: new Date().toISOString() };
+      fields.forEach((field) => { data[field.name] = field.value; });
+      return data;
+    }
+
+    function setData(data) {
+      fields.forEach((field) => {
+        if (Object.prototype.hasOwnProperty.call(data, field.name)) field.value = data[field.name] || "";
+      });
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const completed = requiredForProgress.filter((name) => {
+        const field = form.elements[name];
+        return field && String(field.value).trim().length > 0;
+      }).length;
+      const percent = Math.round((completed / requiredForProgress.length) * 100);
+      document.getElementById("progressText").textContent = `${percent}%`;
+      document.getElementById("progressBar").style.width = `${percent}%`;
+    }
+
+    function message(key) {
+      const element = document.getElementById("saveMessage");
+      element.textContent = translations[language][key];
+      window.setTimeout(() => { element.textContent = ""; }, 3500);
+    }
+
+    document.getElementById("languageToggle").addEventListener("click", () => {
+      language = language === "en" ? "zh" : "en";
+      applyLanguage();
+      updateProgress();
+    });
+
+    document.getElementById("saveButton").addEventListener("click", () => {
+      localStorage.setItem(storageKey, JSON.stringify(getData()));
+      message("saved");
+    });
+
+    document.getElementById("downloadButton").addEventListener("click", () => {
+      const data = getData();
+      const safeName = (data.projectName || "digital-asset-record").replace(/[^a-zA-Z0-9\u4e00-\u9fff_-]+/g, "-").replace(/^-+|-+$/g, "") || "digital-asset-record";
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${safeName}.json`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      message("downloaded");
+    });
+
+    document.getElementById("printButton").addEventListener("click", () => window.print());
+
+    document.getElementById("clearButton").addEventListener("click", () => {
+      if (!window.confirm(translations[language].confirmClear)) return;
+      form.reset();
+      localStorage.removeItem(storageKey);
+      updateProgress();
+      message("cleared");
+    });
+
+    fields.forEach((field) => field.addEventListener("input", updateProgress));
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && typeof saved === "object") setData(saved);
+    } catch (error) {
+      localStorage.removeItem(storageKey);
+    }
+
+    applyLanguage();
+    updateProgress();
+  </script>
+</body>
+</html>
