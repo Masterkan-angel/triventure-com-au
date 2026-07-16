@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Asset Register | Triventure Australia</title>
+  <meta name="description" content="A free bilingual browser-based register for recording digital assets, access levels, versions and next actions." />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .register-page{width:min(1180px,94vw);margin:0 auto;padding:42px 0 70px}.register-intro,.register-panel,.register-note{padding:38px;border-radius:26px;background:rgba(15,23,42,.78);border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(0,0,0,.22)}.register-intro h1{margin:0 0 14px;font-size:clamp(38px,5vw,64px);line-height:1.04}.register-intro p,.register-note p{color:var(--muted);line-height:1.75}.register-panel,.register-note{margin-top:26px}.register-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.register-toolbar button,.register-toolbar a{padding:11px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--text);font-weight:800;text-decoration:none;cursor:pointer}.register-toolbar .primary{background:var(--gold);color:#111827;border-color:var(--gold)}.register-table-wrap{overflow-x:auto}.register-table{width:100%;min-width:1050px;border-collapse:collapse}.register-table th,.register-table td{padding:10px;border:1px solid rgba(255,255,255,.12);vertical-align:top}.register-table th{color:#fde68a;background:rgba(2,6,23,.65);font-size:12px;text-align:left}.register-table input,.register-table select{width:100%;min-width:105px;padding:9px;border-radius:9px;border:1px solid rgba(255,255,255,.16);background:#0b1220;color:var(--text)}.delete-row{border:0;background:transparent;color:#fca5a5;cursor:pointer;font-weight:900}.status-message{min-height:22px;margin:14px 0 0;color:#bbf7d0}.register-note strong{color:var(--gold)}@media(max-width:700px){.register-intro,.register-panel,.register-note{padding:25px 18px}}@media print{.header,.register-toolbar,.register-note,footer{display:none!important}.register-page{width:100%;padding:0}.register-intro,.register-panel{box-shadow:none;border:0;padding:10px}.register-table{min-width:0;font-size:9px}.register-table input,.register-table select{border:0;padding:2px;color:#000;background:#fff;appearance:none}.delete-cell{display:none}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html"><strong>Triventure Australia</strong><span>Digital Asset Register</span></a>
+    <div class="header-actions"><button class="small-button" id="languageToggle" type="button">中文</button><a class="header-cta" href="index.html">Resources</a></div>
+  </header>
+
+  <main class="register-page">
+    <section class="register-intro">
+      <p class="eyebrow" data-i18n="eyebrow">Free Bilingual Working Tool</p>
+      <h1 data-i18n="title">Digital Asset Register</h1>
+      <p data-i18n="intro">Record what you own, where it is, who may access it, its current version and the next action. Information stays in this browser unless you export it.</p>
+    </section>
+
+    <section class="register-panel">
+      <div class="register-toolbar">
+        <button class="primary" id="addRow" type="button" data-i18n="add">Add Asset</button>
+        <button id="saveRegister" type="button" data-i18n="save">Save in Browser</button>
+        <button id="exportCsv" type="button" data-i18n="csv">Export CSV</button>
+        <button id="printRegister" type="button" data-i18n="print">Print / Save PDF</button>
+        <button id="clearRegister" type="button" data-i18n="clear">Clear Register</button>
+      </div>
+      <div class="register-table-wrap">
+        <table class="register-table">
+          <thead><tr>
+            <th data-i18n="id">Asset ID</th><th data-i18n="name">Asset name</th><th data-i18n="type">Type</th><th data-i18n="language">Language</th><th data-i18n="access">Access</th><th data-i18n="status">Status</th><th data-i18n="version">Version</th><th data-i18n="location">Source location</th><th data-i18n="next">Next action</th><th class="delete-cell"></th>
+          </tr></thead>
+          <tbody id="assetRows"></tbody>
+        </table>
+      </div>
+      <p class="status-message" id="statusMessage" role="status"></p>
+    </section>
+
+    <section class="register-note">
+      <strong data-i18n="privacyTitle">Keep sensitive information private.</strong>
+      <p data-i18n="privacy">Do not place passwords, client data, contracts or confidential source material in this public browser tool. Record a safe file location or internal reference instead.</p>
+    </section>
+  </main>
+  <footer><p>© 2026 Triventure Australia. Create once. Improve forever.</p></footer>
+
+  <script>
+    const T={en:{eyebrow:'Free Bilingual Working Tool',title:'Digital Asset Register',intro:'Record what you own, where it is, who may access it, its current version and the next action. Information stays in this browser unless you export it.',add:'Add Asset',save:'Save in Browser',csv:'Export CSV',print:'Print / Save PDF',clear:'Clear Register',id:'Asset ID',name:'Asset name',type:'Type',language:'Language',access:'Access',status:'Status',version:'Version',location:'Source location',next:'Next action',privacyTitle:'Keep sensitive information private.',privacy:'Do not place passwords, client data, contracts or confidential source material in this public browser tool. Record a safe file location or internal reference instead.',saved:'Register saved in this browser.',exported:'CSV exported.',cleared:'Register cleared.',confirm:'Clear every asset in this register?'},zh:{eyebrow:'免费双语工作工具',title:'数字资产登记表',intro:'记录你拥有哪些资产、文件放在哪里、谁可以访问、当前版本和下一步行动。除非主动导出，资料只保存在当前浏览器中。',add:'添加资产',save:'保存在浏览器',csv:'导出CSV',print:'打印／另存为PDF',clear:'清空登记表',id:'资产编号',name:'资产名称',type:'形式',language:'语言',access:'访问级别',status:'状态',version:'版本',location:'源文件位置',next:'下一步行动',privacyTitle:'敏感信息必须保持私密。',privacy:'不要在这个公开浏览器工具中填写密码、客户资料、合同或机密源文件，只记录安全的文件位置或内部编号。',saved:'登记表已保存在当前浏览器。',exported:'CSV文件已导出。',cleared:'登记表已清空。',confirm:'确定清空登记表中的全部资产吗？'}};
+    const typeOptions=['Ebook','PDF','Workbook','Audio','Video','Research','Course','Prompt Kit','AI Workflow','Other'];
+    const languageOptions=['English','中文','Bilingual','Other'];
+    const accessOptions=['Public','Preview','Paid','Private','Mixed'];
+    const statusOptions=['Idea','Planning','Draft','Prototype','Beta','Published','Archived'];
+    let lang=new URLSearchParams(location.search).get('lang')==='zh'?'zh':'en';
+    const body=document.getElementById('assetRows'); const key='triventure-asset-register-v1';
+    function options(list,value){return list.map(x=>`<option ${x===value?'selected':''}>${x}</option>`).join('')}
+    function addRow(data={}){const row=document.createElement('tr');row.innerHTML=`<td><input data-k="id" value="${esc(data.id||'')}" placeholder="TV-001"></td><td><input data-k="name" value="${esc(data.name||'')}"></td><td><select data-k="type">${options(typeOptions,data.type)}</select></td><td><select data-k="language">${options(languageOptions,data.language)}</select></td><td><select data-k="access">${options(accessOptions,data.access)}</select></td><td><select data-k="status">${options(statusOptions,data.status)}</select></td><td><input data-k="version" value="${esc(data.version||'V1')}"></td><td><input data-k="location" value="${esc(data.location||'')}"></td><td><input data-k="next" value="${esc(data.next||'')}"></td><td class="delete-cell"><button class="delete-row" type="button">×</button></td>`;row.querySelector('.delete-row').onclick=()=>row.remove();body.appendChild(row)}
+    function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+    function data(){return [...body.rows].map(r=>Object.fromEntries([...r.querySelectorAll('[data-k]')].map(el=>[el.dataset.k,el.value])))}
+    function apply(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=T[lang][el.dataset.i18n]);document.getElementById('languageToggle').textContent=lang==='en'?'中文':'English';document.title=lang==='en'?'Digital Asset Register | Triventure Australia':'数字资产登记表 | Triventure Australia'}
+    function msg(k){const el=document.getElementById('statusMessage');el.textContent=T[lang][k];setTimeout(()=>el.textContent='',3000)}
+    document.getElementById('addRow').onclick=()=>addRow({id:`TV-${String(body.rows.length+1).padStart(3,'0')}`});
+    document.getElementById('languageToggle').onclick=()=>{lang=lang==='en'?'zh':'en';apply()};
+    document.getElementById('saveRegister').onclick=()=>{localStorage.setItem(key,JSON.stringify(data()));msg('saved')};
+    document.getElementById('printRegister').onclick=()=>print();
+    document.getElementById('clearRegister').onclick=()=>{if(!confirm(T[lang].confirm))return;body.innerHTML='';addRow({id:'TV-001'});localStorage.removeItem(key);msg('cleared')};
+    document.getElementById('exportCsv').onclick=()=>{const rows=data(),headers=['id','name','type','language','access','status','version','location','next'];const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const csv='\uFEFF'+[headers.join(','),...rows.map(r=>headers.map(h=>q(r[h])).join(','))].join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='triventure-digital-asset-register.csv';a.click();URL.revokeObjectURL(a.href);msg('exported')};
+    try{const saved=JSON.parse(localStorage.getItem(key)||'[]');if(saved.length)saved.forEach(addRow);else addRow({id:'TV-001'})}catch(e){addRow({id:'TV-001'})}apply();
+    window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
