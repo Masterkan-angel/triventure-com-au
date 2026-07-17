@@ -1,18 +1,95 @@
 (() => {
   const isChinese = document.documentElement.lang.startsWith('zh');
   const languageKey = isChinese ? 'zh' : 'en';
+
+  const setText = (selector, text, root = document) => {
+    const node = root.querySelector(selector);
+    if (node) node.textContent = text;
+    return node;
+  };
+
+  const hero = document.querySelector('.hero-v4');
+  if (hero) {
+    setText('.gateway-ribbon', isChinese ? '立即探索AI' : 'EXPLORE AI NOW', hero);
+    setText('.hero-support', isChinese
+      ? '从AI工具平台开始，探索大模型、图片制作、视频制作及其他实用功能。'
+      : 'Start with the AI Tool Gateway to explore large language models, image creation, video production and other practical capabilities.', hero);
+  }
+
   const toolsSection = document.querySelector('#ai-tools');
   const duplicateGatewayCard = toolsSection && toolsSection.querySelector('.gateway-card');
   if (duplicateGatewayCard) duplicateGatewayCard.remove();
 
-  const toolsEyebrow = toolsSection && toolsSection.querySelector('.boxed-heading .eyebrow');
-  const toolsHeading = toolsSection && toolsSection.querySelector('.boxed-heading h2');
-  const toolsIntro = toolsSection && toolsSection.querySelector('.boxed-heading > p');
-  if (toolsEyebrow) toolsEyebrow.textContent = isChinese ? '其它工具与服务' : 'MORE TOOLS AND SERVICES';
-  if (toolsHeading) toolsHeading.textContent = isChinese ? '继续规划、变现并建立工作流' : 'Plan, Monetise and Build a Workflow';
-  if (toolsIntro) toolsIntro.textContent = isChinese
-    ? 'AI平台已经在首屏成为主要入口。这里保留三项辅助工具，帮助用户规划数字资产、测试变现产品和建立可重复工作流。'
-    : 'The AI Gateway is already the primary entry on the first screen. These three supporting tools help visitors plan an asset, test a monetisation product and build a repeatable workflow.';
+  if (toolsSection) {
+    setText('.boxed-heading .eyebrow', isChinese ? '实用工具与服务' : 'PRACTICAL TOOLS AND SERVICES', toolsSection);
+    setText('.boxed-heading h2', isChinese ? '把想法转化为可以使用的数字产品' : 'Turn Ideas into Useful Digital Products', toolsSection);
+    setText('.boxed-heading > p', isChinese
+      ? '使用规划工具、内容资源和工作流服务，把知识整理成可以测试、发布和持续改进的数字资产。'
+      : 'Use planning tools, content resources and workflow support to turn knowledge into digital assets that can be tested, published and improved.', toolsSection);
+    setText('.platform-note', isChinese
+      ? 'AI工具平台由独立第三方提供，其价格、隐私政策和服务条款适用。'
+      : 'AI Gateway services are provided by an independent third-party platform. Its pricing, privacy policy and terms apply.', toolsSection);
+  }
+
+  const videoSection = document.querySelector('#video');
+  if (videoSection) {
+    setText('.boxed-heading .eyebrow', isChinese ? '观看与了解' : 'WATCH AND LEARN', videoSection);
+    setText('.boxed-heading h2', isChinese ? '看看AI和数字资产怎样实际应用' : 'See AI and Digital Assets in Action', videoSection);
+    setText('.boxed-heading > p', isChinese
+      ? '通过简短演示、工具介绍和真实项目，了解Triventure怎样把知识转化为可以使用的产品。'
+      : 'Watch short demonstrations, tool walkthroughs and real projects showing how Triventure turns knowledge into useful products.', videoSection);
+    setText('.video-placeholder-copy strong', isChinese ? '重点视频即将上线' : 'Featured Video Coming Soon', videoSection);
+    setText('.video-placeholder-copy small', isChinese ? 'AI工具 · 数字资产 · 真实项目' : 'AI tools · Digital assets · Real projects', videoSection);
+    setText('.video-copy h3', isChinese ? '你将在视频中看到' : 'What You Will See', videoSection);
+    const paragraphs = videoSection.querySelectorAll('.video-copy > p');
+    if (paragraphs[0]) paragraphs[0].innerHTML = isChinese
+      ? '<strong>什么是数字资产？AI可以怎样帮助你？</strong>'
+      : '<strong>What Is a Digital Asset — and How Can AI Help?</strong>';
+    if (paragraphs[1]) paragraphs[1].textContent = isChinese
+      ? '了解怎样使用AI平台探索工具、用启动画布规划产品，并把一个想法发展成可以发布的数字资产。'
+      : 'See how to explore the AI Gateway, plan a product with the Starter Canvas and develop an idea into a publishable digital asset.';
+    const items = videoSection.querySelectorAll('.video-copy li');
+    const videoItems = isChinese
+      ? ['探索AI工具平台', '使用启动画布规划数字资产', '了解想法怎样成为可以发布的产品']
+      : ['Explore the AI Tool Gateway', 'Plan a digital asset with the Starter Canvas', 'See how ideas become publishable products'];
+    items.forEach((item, index) => {
+      if (videoItems[index]) item.textContent = videoItems[index];
+    });
+    const videoLink = videoSection.querySelector('.video-copy .text-link');
+    if (videoLink) {
+      videoLink.textContent = isChinese ? '先探索AI工具 →' : 'Explore AI Tools Now →';
+      videoLink.href = 'https://triv.lk888.ai';
+      videoLink.target = '_blank';
+      videoLink.rel = 'noreferrer';
+    }
+  }
+
+  const methodSection = document.querySelector('#how-it-works');
+  if (methodSection) {
+    setText('.boxed-heading .eyebrow', isChinese ? '从想法到资产' : 'FROM IDEA TO ASSET', methodSection);
+    setText('.boxed-heading h2', isChinese ? '一条实用的六步路径' : 'A Practical Six-Step Path', methodSection);
+    setText('.boxed-heading > p', isChinese
+      ? '整理知识、制作有用产品、完成发布，并根据真实反馈持续改进。'
+      : 'Organise your knowledge, create a useful product, publish it and improve it through real feedback.', methodSection);
+  }
+
+  const servicesSection = document.querySelector('#services');
+  if (servicesSection) {
+    setText('.boxed-heading .eyebrow', isChinese ? '服务' : 'SERVICES', servicesSection);
+    setText('.boxed-heading h2', isChinese ? '把知识转化为实际成果' : 'Turn Knowledge into Practical Results', servicesSection);
+    setText('.boxed-heading > p', isChinese
+      ? '根据需要选择产品开发、AI工作流、数字出版或资产整理服务。'
+      : 'Choose support for product development, AI workflows, digital publishing or asset organisation.', servicesSection);
+  }
+
+  const projectsSection = document.querySelector('#projects');
+  if (projectsSection) {
+    setText('.boxed-heading .eyebrow', isChinese ? '精选项目' : 'SELECTED PROJECTS', projectsSection);
+    setText('.boxed-heading h2', isChinese ? '看看我们正在开发什么' : 'Explore What We Are Building', projectsSection);
+    setText('.boxed-heading > p', isChinese
+      ? '了解已经发布的作品、正在测试的原型和新的数字产品实验。'
+      : 'Discover published work, working prototypes and new digital product experiments.', projectsSection);
+  }
 
   const gatewayHero = document.querySelector('img[data-editable-image="gateway-hero"]');
   if (gatewayHero && isChinese) {
