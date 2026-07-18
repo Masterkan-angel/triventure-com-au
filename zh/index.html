@@ -271,7 +271,7 @@
     (() => {
       const module = document.querySelector('[data-video-module]');
       if (!module) return;
-      const youtubeId = (module.datasetYoutubeId || module.dataset.youtubeId || '').trim();
+      const youtubeId = (module.dataset.youtubeId || '').trim();
       const vimeoId = (module.dataset.vimeoId || '').trim();
       const videoSrc = (module.dataset.videoSrc || '').trim();
       const poster = (module.dataset.poster || '').trim();
