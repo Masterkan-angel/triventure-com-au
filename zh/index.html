@@ -23,13 +23,13 @@
     </a>
     <nav class="main-nav" aria-label="主要导航">
       <a href="https://triv.lk888.ai" target="_blank" rel="noreferrer">AI平台</a>
-      <a href="#ai-tools">工具</a>
+      <a href="#ai-tools">工具包</a>
       <a href="#video">视频</a>
-      <a href="#free-tool">免费工具</a>
+      <a href="#free-tool">启动画布</a>
       <a href="resources/">资源中心</a>
       <a href="#services">服务</a>
       <a href="#projects">项目</a>
-      <a href="#china-insight">中国与中澳</a>
+      <a href="#china-insight">中国商情</a>
     </nav>
     <div class="header-actions">
       <a class="language-link" href="../index.html" lang="en">EN</a>
@@ -46,7 +46,7 @@
         <p class="hero-support">最快的起点是AI工具平台，可进入研究、写作、图片、音频和视频等功能。</p>
         <div class="buttons hero-actions">
           <a class="gateway-primary" href="https://triv.lk888.ai" target="_blank" rel="noreferrer">探索AI工具</a>
-          <a href="../starter-canvas.html?lang=zh">使用免费工具</a>
+          <a href="../starter-canvas.html?lang=zh">使用启动画布</a>
           <a href="start-project.html">与Triventure合作</a>
         </div>
         <div class="hero-proof" aria-label="Triventure重点领域">
@@ -68,10 +68,10 @@
     <section id="ai-tools" class="feature visual-section section-ai">
       <div class="section-heading boxed-heading">
         <div>
-          <p class="eyebrow">重点AI工具</p>
+          <p class="eyebrow">重点AI工具包</p>
           <h2>先进入AI平台，再选择具体任务</h2>
         </div>
-        <p>AI平台是访客最主要的进入路线。其他工具帮助用户规划数字资产、测试产品想法或建立可重复工作流。</p>
+        <p>AI平台是访客最主要的进入路线。其他工具包帮助用户规划数字资产、测试产品想法或建立可重复工作流。</p>
       </div>
       <div class="visual-card-grid">
         <article class="visual-card gateway-card">
@@ -90,7 +90,7 @@
             <span class="status-pill">免费 · 已上线</span>
             <h3>数字资产启动画布</h3>
             <p>确定知识核心、目标用户、第一项有用产品、访问方式和下一步行动。</p>
-            <a href="../starter-canvas.html?lang=zh">打开免费工具 →</a>
+            <a href="../starter-canvas.html?lang=zh">打开启动画布 →</a>
           </div>
         </article>
 
@@ -153,7 +153,7 @@
     <section id="free-tool" class="feature visual-section section-free">
       <div class="split-panel visual-split">
         <div class="boxed-copy">
-          <p class="eyebrow">免费双语工具</p>
+          <p class="eyebrow">免费启动画布</p>
           <h2>数字资产启动画布</h2>
           <p>使用Triventure第一款公开工作流工具，把一个知识核心转化为现实可行的第一项数字资产。</p>
           <ul class="check-list">
@@ -271,7 +271,7 @@
     (() => {
       const module = document.querySelector('[data-video-module]');
       if (!module) return;
-      const youtubeId = (module.dataset.youtubeId || '').trim();
+      const youtubeId = (module.datasetYoutubeId || module.dataset.youtubeId || '').trim();
       const vimeoId = (module.dataset.vimeoId || '').trim();
       const videoSrc = (module.dataset.videoSrc || '').trim();
       const poster = (module.dataset.poster || '').trim();
