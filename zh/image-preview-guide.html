@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图片预览更换流程｜Triventure Australia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .guide-page { max-width: 980px; margin: 0 auto; padding: 72px 24px; }
+    .guide-panel { background: rgba(11, 22, 38, 0.86); border: 1px solid rgba(255, 202, 40, 0.32); border-radius: 28px; padding: 32px; box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+    .guide-steps { display: grid; gap: 18px; margin-top: 28px; }
+    .guide-step { border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 20px; background: rgba(255,255,255,.035); }
+    .guide-step strong { color: #ffca28; display: block; margin-bottom: 8px; }
+    .guide-note { margin-top: 28px; padding: 18px 20px; border-radius: 18px; background: rgba(0, 188, 212, .1); border: 1px solid rgba(0, 188, 212, .28); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Triventure Australia 中文主页">
+      <strong>Triventure Australia</strong>
+      <span>AI工具 · 数字资产 · 数字出版</span>
+    </a>
+    <nav class="main-nav" aria-label="说明页导航">
+      <a href="index.html">中文首页</a>
+      <a href="../image-preview-guide.html" lang="en">EN</a>
+    </nav>
+  </header>
+
+  <main class="guide-page">
+    <section class="guide-panel">
+      <p class="eyebrow">站长操作流程</p>
+      <h1>图片预览更换与正式上传流程</h1>
+      <p>这个页面说明怎样安全测试首页图片。你可以先在浏览器里临时替换图片，确认效果后，再把最终图片正式加入 GitHub，并通过 Vercel 预览部署检查。</p>
+
+      <div class="guide-steps">
+        <article class="guide-step"><strong>1. 打开编辑预览模式</strong><p>在首页地址后加 <code>?edit=1</code>。例如：<code>/zh/?edit=1</code> 或英文首页 <code>/?edit=1</code>。</p></article>
+        <article class="guide-step"><strong>2. 本地替换图片</strong><p>点击可以编辑的图片，或把图片拖到图片区域。替换只保存在你自己的浏览器里，用于预览效果。</p></article>
+        <article class="guide-step"><strong>3. 检查视觉效果</strong><p>分别看桌面和手机布局。建议图片小于 1.5MB，这样浏览器更容易保存本地预览。</p></article>
+        <article class="guide-step"><strong>4. 导出更换清单</strong><p>点击工具条里的<strong>导出更换清单</strong>。把下载的 JSON 文件发给 ChatGPT，或把内容贴过来，我就能知道每张图对应哪个位置。</p></article>
+        <article class="guide-step"><strong>5. 正式上传图片</strong><p>可以使用编辑工具条里的 GitHub 上传入口，或把最终选中的图片交给我，由我给出文件命名和放置建议。</p></article>
+        <article class="guide-step"><strong>6. 提交后再次预览</strong><p>图片文件真正提交到分支后，Vercel 会自动生成新的 Preview Deployment，再进行最后检查。</p></article>
+      </div>
+
+      <div class="guide-note">
+        <strong>重要说明：</strong>这个编辑模式不是正式 CMS，也不会把图片永久上传到 Vercel。它只是一个安全的站长预览工具，用来先选图、试图、确认效果。
+      </div>
+    </section>
+  </main>
+</body>
+</html>

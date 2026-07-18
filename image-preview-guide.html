@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Preview Workflow | Triventure Australia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .guide-page { max-width: 980px; margin: 0 auto; padding: 72px 24px; }
+    .guide-panel { background: rgba(11, 22, 38, 0.86); border: 1px solid rgba(255, 202, 40, 0.32); border-radius: 28px; padding: 32px; box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+    .guide-steps { display: grid; gap: 18px; margin-top: 28px; }
+    .guide-step { border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 20px; background: rgba(255,255,255,.035); }
+    .guide-step strong { color: #ffca28; display: block; margin-bottom: 8px; }
+    .guide-note { margin-top: 28px; padding: 18px 20px; border-radius: 18px; background: rgba(0, 188, 212, .1); border: 1px solid rgba(0, 188, 212, .28); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Triventure Australia home">
+      <strong>Triventure Australia</strong>
+      <span>AI Tools · Digital Assets · Publishing</span>
+    </a>
+    <nav class="main-nav" aria-label="Guide navigation">
+      <a href="index.html">Homepage</a>
+      <a href="zh/image-preview-guide.html" lang="zh-CN">中文</a>
+    </nav>
+  </header>
+
+  <main class="guide-page">
+    <section class="guide-panel">
+      <p class="eyebrow">OWNER WORKFLOW</p>
+      <h1>Image Preview and Final Upload Workflow</h1>
+      <p>This page explains how to test homepage images safely before they are permanently added to the GitHub repository and deployed to Vercel.</p>
+
+      <div class="guide-steps">
+        <article class="guide-step"><strong>1. Open preview edit mode</strong><p>Open the homepage with <code>?edit=1</code>. Example: <code>/?edit=1</code> or <code>/zh/?edit=1</code>.</p></article>
+        <article class="guide-step"><strong>2. Replace images locally</strong><p>Click an editable image, or drag an image file onto it. The replacement is saved only in your own browser for preview.</p></article>
+        <article class="guide-step"><strong>3. Check visual fit</strong><p>Review desktop and mobile layout. Keep images under about 1.5MB for reliable local preview.</p></article>
+        <article class="guide-step"><strong>4. Export the change list</strong><p>Click <strong>Export change list</strong>. Send the JSON file or paste its contents into ChatGPT so the final image slots are clear.</p></article>
+        <article class="guide-step"><strong>5. Upload final images</strong><p>Use the GitHub upload link in the edit toolbar, or share the chosen files with ChatGPT for final naming and placement guidance.</p></article>
+        <article class="guide-step"><strong>6. Commit and preview again</strong><p>After real image files are committed to the branch, Vercel will create a new Preview Deployment for final checking.</p></article>
+      </div>
+
+      <div class="guide-note">
+        <strong>Important:</strong> The edit mode is not a real CMS. It does not permanently upload images to Vercel. It is a safe owner-only preview tool for choosing final images before committing them to GitHub.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
